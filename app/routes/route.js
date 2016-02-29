@@ -32,6 +32,16 @@ angular.module('app')
             controller: 'menuController'
         })
 
+        .when('/lancamento_horas',{
+            templateUrl: 'app/views/cadastros/lancamento_horas.html',
+            controller: 'lancamentoHorasController'
+        })
+
+        .when('/lancamento_horas_gerencial',{
+            templateUrl: 'app/views/cadastros/lancamento_horas_gerencial.html',
+            controller: 'lancamentoHorasGerancialController'
+        })
+
        ;
 })
     .run( function($rootScope, $location) {
