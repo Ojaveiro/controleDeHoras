@@ -1,7 +1,7 @@
- <div class="header clearfix">
-        <div ng-include="'app/views/navBar.html'"></div>
-        <h4 class="text-muted">Relatório de Horas por Colaborador</h4>
-    </div>
+<div class="header clearfix">
+    <div ng-include="'app/views/navBar.html'"></div>
+    <h4 class="text-muted">Relatório de Horas por Colaborador</h4>
+</div>
 
 <div class="table-responsive">
 
@@ -13,50 +13,41 @@
 
 
                 <fieldset class="form-group col-lg-6">
-
                     <label for="selectConta">Contas:</label>
                     <select id="selectConta" class="c-select form-control">
                         <option selected>-</option>
-                        <option>Projetos</option>
-                        <option>Férias</option>
-                        <option>Ausência</option>
-                        <option>Administrativa</option>
-                        <option>Sustentação</option>
+                        <option ng-repeat="conta in contas" value="{{conta.id}}">{{conta.nome}}</option>
                     </select>
                 </fieldset>
-                <fieldset class="form-group col-lg-6">
 
+                <fieldset class="form-group col-lg-6">
                     <label for="selectProjeto">Projetos:</label>
                     <select id="selectProjeto" class="c-select  form-control">
                         <option selected>-</option>
-                        <option>Arrecadação</option>
-                        <option>Carreteiro</option>
-                        <option>Garantia de Margem</option>
-                        <option>Relatório de Margens</option>
-                        <option>Simulador de Compras</option>
+                        <option ng-repeat="projeto in projetos" value="{{projeto.id}}">{{projeto.nome}}</option>
                     </select>
 
 
                 </fieldset>
                 <fieldset class="form-group col-lg-6">
-
-
                     <label for="selectTipoLancamento">Tipo do Lançamento:</label>
+
                     <select id="selectTipoLancamento" class="c-select  form-control">
                         <option selected>-</option>
-                        <option>Normal</option>
-                        <option>Adicional</option>
-                        <option>Sobreaviso</option>
+                        <option ng-repeat="tipoLancamento in tiposLancamentos" value="{{tipoLancamento.id}}">
+                            {{tipoLancamento.nome}}
+                        </option>
                     </select>
 
                 </fieldset>
+
                 <fieldset class="form-group col-lg-6">
                     <label for="selectColaboradores">Colaboradores:</label>
                     <select id="selectColaboradores" class="c-select  form-control">
                         <option selected>-</option>
-                        <option>Eduardo Cortes</option>
-                        <option>Guilherme Reis</option>
-                        <option>Daniel Freitas</option>
+                        <option ng-repeat="colaborador in colaboradores" value="{{colaborador.id}}">
+                            {{colaborador.nome}}
+                        </option>
                     </select>
 
                 </fieldset>
@@ -80,7 +71,7 @@
                         Pesquisar
                     </button>
 
-                    <button type="button" class="btn btn-danger" ng-click="irParaMenu()"><span class="glyphicon glyphicon-backward"></span> Voltar</button>
+
                 </fieldset>
 
 
@@ -95,28 +86,15 @@
 
 <table class="table table-hover">
     <thead>
-    <tr>
         <th>Colaborador</th>
         <th>Id</th>
         <th>Horas</th>
-    </tr>
-
     </thead>
     <tbody>
-    <tr>
-        <td>Eduardo Cortes</td>
-        <td>erd_lima</td>
-        <td>20:30</td>
-    </tr>
-    <tr>
-        <td>Guilherme Reis</td>
-        <td>gui_reis</td>
-        <td>06:00</td>
-    </tr>
-    <tr>
-        <td>Daniel Freitas</td>
-        <td>da_freitas</td>
-        <td>06:00</td>
+    <tr ng-repeat="item in relatorioHorasColaborador">
+        <td>{{item.nome}}</td>
+        <td>{{item.id}}</td>
+        <td>{{item.hora}}</td>
     </tr>
     </tbody>
 </table>

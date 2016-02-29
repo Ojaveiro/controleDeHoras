@@ -1,3 +1,8 @@
+<div class="header clearfix">
+    <div ng-include="'app/views/navBar.html'"></div>
+    <h4 class="text-muted">Lançamento de Horas</h4>
+</div>
+
 <div class="table-responsive">
 
     <div class="panel panel-info">
@@ -9,67 +14,40 @@
 
 
                 <fieldset class="form-group col-lg-6">
-
                     <label for="selectConta">Contas:</label>
                     <select id="selectConta" class="c-select form-control">
                         <option selected>-</option>
-                        <option>Projetos</option>
-                        <option>Férias</option>
-                        <option>Ausência</option>
-                        <option>Administrativa</option>
-                        <option>Sustentação</option>
+                        <option ng-repeat="conta in contas" value="{{conta.id}}">{{conta.nome}}</option>
                     </select>
                 </fieldset>
-                <fieldset class="form-group col-lg-6">
 
+                <fieldset class="form-group col-lg-6">
                     <label for="selectProjeto">Projetos:</label>
                     <select id="selectProjeto" class="c-select  form-control">
                         <option selected>-</option>
-                        <option>Arrecadação</option>
-                        <option>Carreteiro</option>
-                        <option>Garantia de Margem</option>
-                        <option>Relatório de Margens</option>
-                        <option>Simulador de Compras</option>
+                        <option ng-repeat="projeto in projetos" value="{{projeto.id}}">{{projeto.nome}}</option>
                     </select>
-
-
                 </fieldset>
+
                 <fieldset class="form-group col-lg-12">
-
-
                     <label for="selectTipoLancamento">Tipo do Lançamento:</label>
                     <select id="selectTipoLancamento" class="c-select  form-control">
                         <option selected>-</option>
-                        <option>Normal</option>
-                        <option>Adicional</option>
-                        <option>Sobreaviso</option>
+                        <option ng-repeat="tipoLancamento in tiposLancamentos" value="{{tipoLancamento.id}}">{{tipoLancamento.nome}}</option>
                     </select>
-
                 </fieldset>
+
                 <fieldset class="form-group col-lg-2">
-
-
                     <label for="inputDataInicial">Horas:</label>
                     <input type="text" id="inputDataInicial" class="form-control">
-
                 </fieldset>
 
                 <fieldset class="form-group col-lg-12">
-
                         <button class="btn btn-primary" type="submit">
                             <span class="glyphicon glyphicon-ok"></span>
                             Lançar Horas
                         </button>
-
-                    <button type="button" class="btn btn-danger" ng-click="irParaMenu()"><span class="glyphicon glyphicon-backward"></span> Voltar</button>
-
                 </fieldset>
-
-
-
-
-
-
             </form>
         </div>
     </div>

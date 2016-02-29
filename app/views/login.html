@@ -1,11 +1,21 @@
-<div class="container">
+<div class="header clearfix">
+    <h3 class="text-muted">Gerenciamento e Lançamento de Horas por Projetos</h3>
+</div>
+
+<div class="table-responsive">
 
     <div ng-if="login.error" class="alert alert-danger" role="alert">
         <strong>Login inválido!</strong> Por favor, verifique o usuário e senha e tente novamente.
+        <span><br/><br/><b>Tente:</b></span>
+        <ul>
+            <li><b>Usuario:</b> Eduardo <b>&nbsp;&nbsp;&nbsp;Senha:</b>123</li>
+            <li><b>Usuario:</b> Guilherme <b>Senha:</b>123</li>
+            <li><b>Usuario:</b> Daniel <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Senha:</b>321</li>
+        </ul>
     </div>
 
     <form name="form" class="form-signin">
-        <h2 class="form-signin-heading">Login</h2>
+        <h2 class="form-signin-heading">Identificação</h2>
 
         <label for="inputUsuario" class="sr-only">Usuário</label>
         <input type="text" id="inputUsuario" ng-model="login.inputUsuario" class="form-control" placeholder="Usuário" required autofocus>
@@ -14,16 +24,9 @@
         <input type="password" ng-model="login.inputPassword" id="inputPassword" class="form-control" placeholder="Senha" required>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="form.$invalid" ng-click="logar(login)">Log in</button>
-        <button class="btn btn btn-lg btn-danger btn-block" type="button" onclick="location.href='../../index.html'" >
+        <button class="btn btn btn-lg btn-danger btn-block" type="button" onclick="location.href='#/'" >
             Cancelar
         </button>
     </form>
 
-</div> <!-- /container -->
-
-
-
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
-</body>
-</html>
+</div>

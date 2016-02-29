@@ -12,40 +12,29 @@
 
             <fieldset class="form-group col-lg-6">
                 <label for="selectConta">Contas:</label>
-                <select id="selectConta" class="c-select form-control" ng-model="conta.id">
+                <select id="selectConta" class="c-select form-control">
                     <option selected>-</option>
                     <option ng-repeat="conta in contas" value="{{conta.id}}">{{conta.nome}}</option>
                 </select>
             </fieldset>
-            <fieldset class="form-group col-lg-6">
 
+            <fieldset class="form-group col-lg-6">
                 <label for="selectProjeto">Projetos:</label>
                 <select id="selectProjeto" class="c-select  form-control">
                     <option selected>-</option>
-                    <option>Arrecadação</option>
-                    <option>Carreteiro</option>
-                    <option>Garantia de Margem</option>
-                    <option>Relatório de Margens</option>
-                    <option>Simulador de Compras</option>
+                    <option ng-repeat="projeto in projetos" value="{{projeto.id}}">{{projeto.nome}}</option>
                 </select>
-
-
             </fieldset>
+
             <fieldset class="form-group col-lg-12">
-
-
                 <label for="selectTipoLancamento">Tipo do Lançamento:</label>
                 <select id="selectTipoLancamento" class="c-select  form-control">
                     <option selected>-</option>
-                    <option>Normal</option>
-                    <option>Adicional</option>
-                    <option>Sobreaviso</option>
+                    <option ng-repeat="tipoLancamento in tiposLancamentos" value="{{tipoLancamento.id}}">{{tipoLancamento.nome}}</option>
                 </select>
-
             </fieldset>
+
             <fieldset class="form-group col-lg-6">
-
-
                 <label for="inputDataInicial">Data Inicial:</label>
                 <input type="date" id="inputDataInicial" class="form-control">
 
@@ -63,7 +52,6 @@
                     Pesquisar
                 </button>
 
-                <button type="button" class="btn btn-danger" ng-click="irParaMenu()"><span class="glyphicon glyphicon-backward"></span> Voltar</button>
             </fieldset>
 
 
@@ -77,40 +65,15 @@
 
 <table class="table table-hover">
     <thead>
-    <tr>
         <th>Data</th>
         <th>Tipo</th>
         <th>Hora</th>
-    </tr>
-
     </thead>
     <tbody>
-    <tr>
-        <td>01/02/2016</td>
-        <td>Normal</td>
-        <td>06:00</td>
-    </tr>
-    <tr>
-        <td>02/02/2016</td>
-        <td>Normal</td>
-        <td>06:00</td>
-    </tr>
-    <tr>
-        <td>03/02/2016</td>
-        <td>Normal</td>
-        <td>06:00</td>
-    </tr>
-    <tr>
-        <td>04/02/2016</td>
-        <td>Adicional</td>
-        <td>02:30</td>
-    </tr>
-    </tbody>
-    <tfoot>
-    <tr>
-        <th></th>
-        <th></th>
-        <th>20:30</th>
+    <tr ng-repeat="item in relatorioHoras">
+        <td>{{item.data | date:'dd/MM/yyyy'}}</td>
+        <td>{{item.tipo}}</td>
+        <td>{{item.hora}}</td>
     </tr>
     </tfoot>
 </table>
