@@ -1,0 +1,25 @@
+{
+  "name": "gerenciamento-horas",
+  "authors": [
+    "eduardocortes <eduardo.lima@fcamara.com.br>"
+  ],
+  "description": "Gerenciamento de horas de projetos",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.0",
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.1",
+    "angular-route": "^1.5.0"
+  }
+}

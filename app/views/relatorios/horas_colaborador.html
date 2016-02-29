@@ -1,0 +1,125 @@
+ <div class="header clearfix">
+        <div ng-include="'app/views/navBar.html'"></div>
+        <h4 class="text-muted">Relatório de Horas por Colaborador</h4>
+    </div>
+
+<div class="table-responsive">
+
+    <div class="panel panel-info">
+        <div class="panel-heading">Filtros
+        do Relatório</div>
+        <div class="panel-body">
+            <form>
+
+
+                <fieldset class="form-group col-lg-6">
+
+                    <label for="selectConta">Contas:</label>
+                    <select id="selectConta" class="c-select form-control">
+                        <option selected>-</option>
+                        <option>Projetos</option>
+                        <option>Férias</option>
+                        <option>Ausência</option>
+                        <option>Administrativa</option>
+                        <option>Sustentação</option>
+                    </select>
+                </fieldset>
+                <fieldset class="form-group col-lg-6">
+
+                    <label for="selectProjeto">Projetos:</label>
+                    <select id="selectProjeto" class="c-select  form-control">
+                        <option selected>-</option>
+                        <option>Arrecadação</option>
+                        <option>Carreteiro</option>
+                        <option>Garantia de Margem</option>
+                        <option>Relatório de Margens</option>
+                        <option>Simulador de Compras</option>
+                    </select>
+
+
+                </fieldset>
+                <fieldset class="form-group col-lg-6">
+
+
+                    <label for="selectTipoLancamento">Tipo do Lançamento:</label>
+                    <select id="selectTipoLancamento" class="c-select  form-control">
+                        <option selected>-</option>
+                        <option>Normal</option>
+                        <option>Adicional</option>
+                        <option>Sobreaviso</option>
+                    </select>
+
+                </fieldset>
+                <fieldset class="form-group col-lg-6">
+                    <label for="selectColaboradores">Colaboradores:</label>
+                    <select id="selectColaboradores" class="c-select  form-control">
+                        <option selected>-</option>
+                        <option>Eduardo Cortes</option>
+                        <option>Guilherme Reis</option>
+                        <option>Daniel Freitas</option>
+                    </select>
+
+                </fieldset>
+                <fieldset class="form-group col-lg-6">
+
+
+                    <label for="inputDataInicial">Data Inicial:</label>
+                    <input type="date" id="inputDataInicial" class="form-control">
+
+                </fieldset>
+                <fieldset class="form-group col-lg-6">
+
+                    <label for="inputDataInicial">Data Final:</label>
+                    <input type="date" id="inputDataFinal" class="form-control">
+
+                </fieldset>
+                <fieldset class="form-group col-lg-12">
+
+                    <button class="btn btn-primary " type="submit">
+                        <span class="glyphicon glyphicon-search"></span>
+                        Pesquisar
+                    </button>
+
+                </fieldset>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="page-header">
+    <h4>Relatório</h4>
+</div>
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>Colaborador</th>
+        <th>Id</th>
+        <th>Horas</th>
+    </tr>
+
+    </thead>
+    <tbody>
+    <tr>
+        <td>Eduardo Cortes</td>
+        <td>erd_lima</td>
+        <td>20:30</td>
+    </tr>
+    <tr>
+        <td>Guilherme Reis</td>
+        <td>gui_reis</td>
+        <td>06:00</td>
+    </tr>
+    <tr>
+        <td>Daniel Freitas</td>
+        <td>da_freitas</td>
+        <td>06:00</td>
+    </tr>
+    </tbody>
+</table>
+<ul class="pager">
+    <li class="previous"><a href="#">&larr; Previous</a></li>
+    <li class="next"><a href="#">Next &rarr;</a></li>
+</ul>
